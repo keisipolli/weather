@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", cityWeather)
 
 function weatherDataFetch( city ) {
     var key = "4c9f7b8ced99c03a5db8192a1fa6a1ac";
-    fetch("https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}")
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}`)
         .then(function (resp) {
             return resp.json()
         }) // Convert data to json
@@ -24,6 +24,6 @@ function drawWeather(data) {
     var description = data.weather[0].description;
 
     document.querySelector("#description").innerHTML = description;
-    document.querySelector("#temp").innerHTML = celcius + &deg;';
+    document.querySelector("#temp").innerHTML = celcius + "&deg;";
         document.querySelector("#location").innerHTML = data.name;
 }
